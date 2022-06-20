@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PhotosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('photos','App\Http\Controllers\PhotosController@view')->name('photos');
+Route::post('photos/store','App\Http\Controllers\PhotosController@store')->name('photos/store');
